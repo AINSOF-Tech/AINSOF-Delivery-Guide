@@ -885,7 +885,12 @@
             background: var(--blue-dim);
             color: var(--blue);
         }
-    </style>
+    
+/* Focus (Or, 8.11.2026, same as ainsof.io): the browser's blue ring becomes our neutral one,
+   for keyboard focus only; a control with its own focus state keeps it. */
+:where(a,button,summary,select,input,textarea,[role="button"],[tabindex]):focus:not(:focus-visible){outline:none}
+:where(a,button,summary,select,input,textarea,[role="button"],[tabindex]):focus-visible{outline:2px solid rgba(255,255,255,.55);outline-offset:2px}
+</style>
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
